@@ -1,0 +1,525 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+
+:root{
+--voilet:#6c5ce7;
+--pink:#FC4278;
+--gradient:linear-gradient(90deg, var(--violet),var(--pink));
+
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    border: none;
+    font-family: 'Nunito',sans-serif;
+    outline: none;
+    text-transform: capitalize;
+    transition:all .2s ease-out ;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: #333;
+}
+
+html::-webkit-slider-thumb{
+    background: #fff;
+    border-radius: 5rem;
+}
+
+body{
+    background-image: linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+    padding: 3rem 5%; 
+    padding-bottom: 9rem ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    
+}
+.container{
+    background: rgb(250, 245, 245);
+    border-radius: .5rem;
+    box-shadow: 0.5rem 1rem rgba(0,0,0,.3);
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    width: 100%;
+    padding: 1rem 5%;
+    border-bottom: 1rem solid rgba(73, 30, 70, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+header .logo{
+    font-size: 2rem;
+    color: rgb(90, 24, 92);
+    font-weight: bolder;
+}
+
+header .logo span{
+    color: rgb(236, 9, 122);
+}
+
+header .navbar ul{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .navbar ul a{
+color: black;
+font-size: 2rem;
+margin: 10px 10px;
+}
+
+header .navbar ul a:hover {
+    color: rgb(236, 9, 122);
+}
+
+#menu{
+    
+    padding: .1rem .8rem ;
+    font-size: 2.5rem;
+    border-radius: .3rem;
+    border: 1rem solid  rgba(0,0,0,.2);
+    cursor: pointer;
+display: none;
+}
+
+footer{
+    padding: 2rem 7%;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.footer .box-container .box{
+    flex:1 1 20rem;
+ 
+    
+
+}
+.footer .box-container .center{
+    text-align: center;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:rgb(90, 24, 92); 
+    padding: .7rem 0;
+}
+.footer .box-container .box p{
+    font-size: 1.5rem;
+    color:#666;
+    padding: .7rem 0;
+}
+.footer .box-container .box a{
+    display: block;
+    font-size: 1.5rem;
+    color:#666;
+    padding: .7rem 0;
+}
+.footer .box-container .box a:hover{
+    color: rgb(236, 9, 122);
+}
+
+.footer .box-container .box p i{
+    color: rgb(236, 9, 122);
+    padding-right: .5rem;
+}
+.footer .credit{
+    margin-top: 1rem;
+    padding:1rem;
+    padding-top: 2rem;
+    font-size: 2rem;
+    color: #666;
+    text-align: center;
+    border-top: 1rem solid rgba(0, 0,0, 0.1);
+}
+.footer .credit span{
+    color: rgb(236, 9, 122);
+}
+
+
+.home{
+    display: flex;
+    align-items: center;
+    gap:1.5rem;
+    flex-wrap: wrap;
+ width: 85%;
+ margin: auto;
+}
+.home .content{
+    flex: 1 1 40rem;
+    
+}
+.home .img{
+    flex: 1 1 40rem;
+}
+
+.home .img img{
+    width: 100%;
+}
+.home .content h3{
+   color:transparent;
+   background: linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+   font-size: 4rem;
+   background-clip: text;
+   -webkit-background-clip: text;
+  }
+
+  .home .content p{
+      padding:5rem 0;
+      font-size: 1.7rem;
+      color: #666;
+  }
+   .btn{
+      padding:  2rem 3rem;
+    
+      color: wheat;
+      font-size: 2rem;
+      border-radius: .7rem;
+      background:  linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+  }
+
+
+
+/*media queries*/
+@media  (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+
+    body{
+        padding: 1.5rem;
+    }
+    header{
+        padding: 2rem;
+
+    }
+    .footer{
+        padding: 2rem;
+    }
+}
+
+@media  (max-width: 768px)
+{
+#menu{
+    display: initial;
+}
+header .navbar{
+    position:absolute;
+    top:100%;
+    left: 0;
+    background: linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+    right: 0;
+    border-top: 1rem solid rgba(0, 0,0, 0.2);
+    border-bottom: 1rem solid rgba(0, 0,0, 0.2);
+    clip-path: polygon(0 0,100% 0, 100% 0, 0 0);
+    
+}
+   
+header .navbar.active{
+    clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+}
+
+header .navbar ul{
+    flex-direction: column;
+}
+header .navbar ul li a{
+    font-weight: bolder;
+    font-size: 2.5rem;
+    display: block;
+    margin: 2rem 0;
+    text-align: center;
+    color: #fff;
+} 
+}
+@media  (max-width: 650px)
+{
+    .footer .box-container .box {
+        text-align: center;
+    }
+    .contact .form .half{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .contact .form .half  input[type="text"], .contact .form .half  input[type="email"]{
+        
+        width: 100%;
+padding: 1rem;
+margin: .7rem;
+font-size: 1.7rem;
+        
+    }
+
+}
+
+@media  (max-width: 460px)
+{
+    html{
+        font-size: 50%;
+    }
+}
+.course{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    
+    margin: auto;
+}
+.course .box{
+    flex:1 1  30rem;
+    border-radius: 5rem;
+    border: 1rem solid rgba(0, 0,0, 0.1);
+    padding: 1rem;
+   
+}
+.course .box img{
+    height: 20rem;
+    width: 100%;
+}
+
+.course .box span{
+    
+    margin: .3rem;
+    font-size: 2rem;
+    padding: .5rem 0rem;
+    background:  linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+    color: #fff;
+    border-radius: .5rem;
+}
+.course .box h3{
+font-size: 2rem;
+color: rgb(17, 17, 17);
+}
+.course .box p{
+    font-size: 1.5rem;
+    color: #666;
+    margin: 2rem 0rem;
+}
+.course .box .star i{
+color:rgb(90, 24, 92);
+font-size: 1.5rem;
+padding: 1rem 0;
+}
+.course  .icon{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1rem solid rgba(0, 0,0, 0.1);
+    margin-top: 1rem ;
+    padding: .5rem;
+    padding-top: 1rem;
+}
+.head{
+    text-align: center;
+    color:transparent;
+   background: linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+   font-size: 4rem;
+   background-clip: text;
+   -webkit-background-clip: text;
+   margin: 2rem 0;
+    
+}
+
+
+
+.teacher{
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top:5rem ;
+    margin: auto;
+}
+.teacher .box{
+    flex:1 1  25rem;
+    text-align: center;
+    border: 0.3rem solid rgba(0, 0,0, 0.7);
+    padding: 1rem;
+   
+}
+
+.teacher .box img{
+   
+    margin:5rem 0 ;
+ 
+    object-fit: cover;
+    width: 50%;
+}
+
+.teacher .box h3{
+    font-size: 2.5rem;
+    color:#FC4278;
+    
+    }
+    .teacher .box p{
+        font-size: 1.5rem;
+        color: #666;
+        margin: 2rem 0rem;
+    }
+
+    .teacher .box span{
+        
+   color: #666;
+   font-size: 1.5rem;
+
+    }
+
+    
+    .teacher .box .share a{
+        background-color: #FC4278;
+        width: 6rem;
+        height: 4rem;
+        line-height: 4rem;
+        font-size: 2rem;
+        border-radius: .5rem;
+    }
+
+
+    .price{
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top:5rem ;
+        margin: auto;
+    }
+
+    .price .box{
+        flex:1 1  25rem;
+        text-align: center;
+        border: 0.3rem solid rgba(0, 0,0, 0.3);
+        padding: 1rem;
+       
+        display:flex;
+        flex-direction:column
+    }
+
+    .price .box .nav{
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+    .price .box .nav a{
+        font-size: 1.5rem;
+        padding: .7rem 0;
+        color: rgb(54, 51, 51);
+    }
+
+    .price .box h3{
+        font-size: 2rem;
+    }
+    .price .box span{
+        background: linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+        padding: .7rem 0;
+        font-size: 3rem;
+        font-weight: bolder;
+        color: #fff;
+    }
+
+    .price .box .selectbtn{
+        background-color: #fff;
+        padding: .5rem .4rem;
+        font-weight: normal;
+        border-top: .3rem solid rgba(0,0,0,.5);
+
+    }
+    .price .box .selectbtn a{
+    color: #fff;
+    font-size: 2rem;
+    border-radius: .5rem;
+    padding: .7rem .3rem;
+    background-color: black;
+    }
+
+    .contact{
+        width: 85%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    
+        margin: auto;
+    }
+    .contact img{
+        flex : 1 1 35rem;
+        width: 100%;
+    }
+
+    .contact .form{
+        font-size: 1.5rem;
+        border: .3rem solid rgba(0, 0,0, 0.2) ;
+        border-radius: .6rem;
+        flex:1 1 50rem;
+        padding: 2rem;
+    }
+    .contact .form .btn{
+        padding:  2rem 3rem;
+    
+        color: wheat;
+        font-size: 2rem;
+        border-radius: .7rem;
+        background:  linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+    }
+   
+    .contact .form .half{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .contact .form .half input{
+        padding: 1rem;
+margin: .7rem;
+font-size: 1.7rem;
+border: .1rem solid rgba(5, 4, 4, 0.1);
+        border-radius: .5rem;
+        text-transform: none;
+        width: 45%;
+        resize: none;
+    }
+    .contact .form .half input:focus{
+        border-color: rgb(212, 18, 138);
+    }
+    .contact .form .half,.contact .form .full,.contact .form textarea{
+      
+width: 100%;
+padding: 1rem;
+margin: .7rem;
+font-size: 1.7rem;
+border: .1rem solid rgba(0, 0,0, 0.1);
+        border-radius: .5rem;
+        text-transform: none;
+    }
+
+    .contact .form .half:focus,.contact .form .full:focus,.contact .form textarea:focus
+    {
+        border-color: rgb(212, 18, 138);
+    }
+
+    .contact .form  input[type="submit"]{
+        padding:  2rem 3rem;
+    
+        color: wheat;
+        font-size: 2rem;
+        border-radius: .7rem;
+        background:  linear-gradient(to bottom right,rgb(161, 51, 235),rgb(214, 24, 119));
+    }
